@@ -1,0 +1,529 @@
+/* Services Page Styles */
+
+/* Page Banner */
+.page-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/services-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.page-banner h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.page-banner p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease;
+}
+
+/* Filter Container */
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.filter-container label {
+    margin-right: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-container select {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.filter-container select:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+/* Tours Section */
+.tours {
+    padding: 80px 0;
+    background-color: #fff;
+    background-image: url('../images/pattern-light.png');
+    background-repeat: repeat;
+}
+
+.tours h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #333;
+    position: relative;
+}
+
+.tours h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #0066cc;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 30px;
+}
+
+.tour-item {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.tour-item:hover {
+    transform: translateY(-5px);
+}
+
+.tour-item img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tour-info {
+    padding: 20px;
+    width: 60%;
+}
+
+.tour-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0066cc;
+}
+
+.tour-meta {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.tour-meta span {
+    margin-right: 20px;
+    color: #555;
+}
+
+.tour-meta i {
+    margin-right: 5px;
+    color: #0066cc;
+}
+
+.tour-info p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.tour-includes {
+    margin-bottom: 20px;
+}
+
+.tour-includes h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tour-includes ul {
+    padding-left: 5px;
+}
+
+.tour-includes ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.tour-includes ul li i {
+    color: #0066cc;
+    margin-right: 5px;
+}
+
+/* Vehicle Rental Section */
+.vehicle-rental {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+}
+
+.vehicle-rental h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.vehicle-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.vehicle-item:hover {
+    transform: translateY(-5px);
+}
+
+.vehicle-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.vehicle-info {
+    padding: 20px;
+}
+
+.vehicle-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+}
+
+.price {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.price i {
+    color: #0066cc;
+    margin-right: 5px;
+}
+
+.vehicle-models, .vehicle-requirements {
+    margin-bottom: 15px;
+}
+
+.vehicle-models h4, .vehicle-requirements h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.vehicle-models ul {
+    padding-left: 20px;
+}
+
+.vehicle-models ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.vehicle-requirements ul {
+    padding-left: 5px;
+}
+
+.vehicle-requirements ul li {
+    list-style-type: none;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.vehicle-requirements ul li i {
+    color: #0066cc;
+    margin-right: 5px;
+}
+
+/* Experience Sharing Section */
+.experience-sharing {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.experience-sharing h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.sharing-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sharing-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.rating-stars {
+    display: flex;
+    margin-top: 5px;
+}
+
+.rating-stars i {
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.rating-stars i.active {
+    color: #f8ce0b;
+}
+
+.sharing-form .btn {
+    margin-top: 10px;
+}
+
+/* Reviews Section */
+.reviews {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+}
+
+.reviews h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.reviews-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.review-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.reviewer {
+    font-weight: 500;
+    color: #333;
+}
+
+.review-date {
+    color: #777;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+    color: #f8ce0b;
+}
+
+.review-content {
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tours-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tour-item {
+        flex-direction: column;
+    }
+    
+    .tour-item img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .tour-info {
+        width: 100%;
+    }
+    
+    .vehicles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Image handling improvements */
+.tour-image, .vehicle-image {
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Light background for loading state */
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tour-image::before, .vehicle-image::before {
+    content: '\f03e'; /* Image icon from Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-size: 48px;
+    color: #ccc;
+    position: absolute;
+    z-index: 0;
+}
+
+.tour-image img, .vehicle-image img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fallback-image {
+    object-fit: contain !important;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.tour-item, .vehicle-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.tour-item:hover, .vehicle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved badges */
+.tour-badge, .vehicle-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific badge colors */
+.tour-badge.island {
+    background-color: rgba(0, 153, 204, 0.8);
+}
+
+.tour-badge.city {
+    background-color: rgba(153, 51, 204, 0.8);
+}
+
+.tour-badge.adventure {
+    background-color: rgba(204, 102, 0, 0.8);
+}
+
+.tour-badge.entertainment {
+    background-color: rgba(0, 204, 102, 0.8);
+}
+
+.tour-badge.luxury {
+    background-color: rgba(204, 0, 102, 0.8);
+}
+
+.vehicle-badge.motorbike {
+    background-color: rgba(255, 102, 0, 0.8);
+}
+
+.vehicle-badge.car {
+    background-color: rgba(51, 102, 204, 0.8);
+}
+
+.vehicle-badge.bicycle {
+    background-color: rgba(0, 153, 51, 0.8);
+}
+
+.vehicle-badge.boat {
+    background-color: rgba(0, 153, 204, 0.8);
+}
+
+/* Improved buttons */
+.book-tour, .rent-vehicle {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-tour:hover, .rent-vehicle:hover {
+    background-color: #004d99;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-tour::after, .rent-vehicle::after {
+    content: '\f061'; /* Arrow icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.book-tour:hover::after, .rent-vehicle:hover::after {
+    transform: translateX(3px);
+}

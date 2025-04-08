@@ -1,0 +1,778 @@
+/* Cuisine Page Styles */
+
+/* Cuisine Section */
+.cuisine {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.cuisine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+.cuisine-item {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.cuisine-item:hover {
+    transform: translateY(-5px);
+}
+
+.cuisine-item img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuisine-info {
+    padding: 20px;
+    width: 60%;
+}
+
+.cuisine-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0066cc;
+}
+
+.cuisine-info p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.ingredients, .recipe {
+    margin-bottom: 15px;
+}
+
+.ingredients h4, .recipe h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.ingredients ul {
+    padding-left: 20px;
+}
+
+.ingredients ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Restaurant Reservation Styles */
+.restaurant-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-reserve {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.btn-reserve i {
+    margin-right: 5px;
+}
+
+.btn-reserve:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.reservation-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reservation-modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.reservation-modal.show .reservation-modal-content {
+    transform: scale(1);
+}
+
+.reservation-modal-header {
+    padding: 20px;
+    background-color: #28a745;
+    color: white;
+    position: relative;
+}
+
+.reservation-modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.reservation-modal .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.reservation-modal .close:hover {
+    color: #f8f9fa;
+}
+
+.reservation-form {
+    padding: 20px;
+}
+
+.reservation-form .form-group {
+    margin-bottom: 15px;
+}
+
+.reservation-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+.reservation-form input,
+.reservation-form select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+.reservation-form .time-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.reservation-form .time-slot {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reservation-form .time-slot:hover {
+    background-color: #f8f9fa;
+}
+
+.reservation-form .time-slot.selected {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.reservation-form .btn-submit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.reservation-form .btn-submit:hover {
+    background-color: #218838;
+}
+
+.reservation-confirmation {
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+
+.reservation-confirmation i {
+    font-size: 60px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.reservation-confirmation h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.reservation-confirmation p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.reservation-confirmation .reservation-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.reservation-confirmation .reservation-details p {
+    margin: 5px 0;
+}
+
+.reservation-confirmation .btn-done {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reservation-confirmation .btn-done:hover {
+    background-color: #218838;
+}
+
+/* Video Section */
+.video-section {
+    padding: 40px 0;
+    background-color: #f5f5f5;
+}
+
+.video-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.video-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail {
+    position: relative;
+    cursor: pointer;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.play-button i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.video-thumbnail:hover .play-button {
+    background-color: rgba(0, 102, 204, 0.8);
+}
+
+.video-item h3 {
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Video Modal */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    max-width: 900px;
+}
+
+.video-modal-content .close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Restaurants Section */
+.restaurants {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.restaurants h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.restaurant-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.restaurant-item:hover {
+    transform: translateY(-5px);
+}
+
+.restaurant-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.restaurant-info {
+    padding: 20px;
+}
+
+.restaurant-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0066cc;
+}
+
+.restaurant-info p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.rating {
+    margin-bottom: 10px;
+    color: #f8ce0b;
+}
+
+.rating span {
+    color: #333;
+    margin-left: 5px;
+}
+
+.price-range {
+    font-weight: 500;
+}
+
+.specialties {
+    margin: 15px 0;
+}
+
+.specialties h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.specialties ul {
+    padding-left: 20px;
+}
+
+.specialties ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.restaurant-info .btn {
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cuisine-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cuisine-item {
+        flex-direction: column;
+    }
+    
+    .cuisine-item img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .cuisine-info {
+        width: 100%;
+    }
+    
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .video-modal-content {
+        width: 95%;
+        height: 50%;
+    }
+}
+
+/* Review Modal Styles */
+.review-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.review-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.review-modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-modal.show .review-modal-content {
+    transform: scale(1);
+}
+
+.review-modal .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.review-modal .close:hover {
+    color: #0066cc;
+}
+
+.review-modal-header {
+    padding: 25px 30px;
+    background-color: #0066cc;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-modal-header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.restaurant-overall-rating .rating {
+    display: flex;
+    align-items: center;
+}
+
+.restaurant-overall-rating .rating i {
+    color: #ffdd00;
+    margin-right: 2px;
+}
+
+.restaurant-overall-rating .rating span {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.review-list {
+    padding: 25px 30px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.review-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.review-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+}
+
+.review-user i {
+    font-size: 24px;
+    color: #0066cc;
+    margin-right: 10px;
+}
+
+.review-user span {
+    font-weight: 600;
+    color: #333;
+}
+
+.review-date {
+    color: #777;
+    font-size: 14px;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+}
+
+.review-rating i {
+    color: #ffdd00;
+    margin-right: 2px;
+}
+
+.review-comment {
+    color: #555;
+    line-height: 1.6;
+}
+
+.no-reviews {
+    color: #777;
+    text-align: center;
+    font-style: italic;
+}
+
+.add-review-form {
+    padding: 25px 30px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.add-review-form h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.rating-input {
+    display: flex;
+    gap: 5px;
+}
+
+.rating-input i {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating-input i.fas {
+    color: #ffdd00;
+}
+
+.rating-input i:hover {
+    transform: scale(1.1);
+}
+
+.submit-review {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-review:hover {
+    background-color: #004d99;
+    transform: translateY(-2px);
+}
+
+/* Responsive styles for reviews */
+@media (max-width: 768px) {
+    .review-modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .restaurant-overall-rating {
+        margin-top: 10px;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .review-date {
+        margin-top: 5px;
+    }
+    
+    .rating-input i {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .review-modal-content {
+        width: 95%;
+    }
+    
+    .review-modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .review-list {
+        padding: 20px;
+    }
+    
+    .add-review-form {
+        padding: 20px;
+    }
+}

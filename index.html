@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Du Lịch Nha Trang - Thiên Đường Biển Đảo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Du Lịch Nha Trang</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Trang Chủ</a></li>
+                    <li><a href="destinations.html">Điểm Đến</a></li>
+                    <li><a href="cuisine.html">Ẩm Thực</a></li>
+                    <li><a href="services.html">Dịch Vụ</a></li>
+                    <li><a href="booking.html">Đặt Chỗ</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/Bien-nha-trang-2-jpg.webp" alt="Bãi biển Nha Trang">
+                <div class="caption">Bãi biển cát trắng tuyệt đẹp</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/vinh-nha-trang-dep-nhat.jpg" alt="Vịnh Nha Trang">
+                <div class="caption">Vịnh biển đẹp nhất thế giới</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/quan-hai-san-ngon-o-mui-ne-banner.jpg" alt="Ẩm thực Nha Trang">
+                <div class="caption">Thiên đường hải sản tươi ngon</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Chào mừng đến với Nha Trang</h2>
+            <p>Nha Trang - thành phố biển xinh đẹp nằm ở miền Trung Việt Nam, nổi tiếng với những bãi biển cát trắng mịn, làn nước trong xanh và hệ sinh thái biển phong phú. Đến với Nha Trang, du khách không chỉ được tận hưởng vẻ đẹp của thiên nhiên mà còn được khám phá nền văn hóa đặc sắc và thưởng thức ẩm thực hải sản tuyệt vời.</p>
+        </div>
+    </section>
+
+    <section class="quick-links">
+        <div class="container">
+            <h2>Khám Phá Ngay</h2>
+            <div class="links-grid">
+                <a href="destinations.html" class="link-card">
+                    <img src="images/vinpearl.jpeg" alt="Vinpearl Land">
+                    <h3>Điểm Đến</h3>
+                </a>
+                <a href="cuisine.html" class="link-card">
+                    <img src="images/Hai-San-Nha-Trang.jpeg" alt="Hải sản Nha Trang">
+                    <h3>Ẩm Thực</h3>
+                </a>
+                <a href="services.html" class="link-card">
+                    <img src="images/Lan-Bien.jpeg" alt="Lặn biển">
+                    <h3>Dịch Vụ</h3>
+                </a>
+                <a href="booking.html" class="link-card">
+                    <img src="images/tour.jpeg" alt="Tour đảo">
+                    <h3>Đặt Tour</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>Chúng tôi cung cấp thông tin du lịch chính xác và hấp dẫn về Nha Trang, giúp bạn có những trải nghiệm tuyệt vời nhất tại thiên đường biển này.</p>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Liên Hệ</h3>
+                    <p><i class="fas fa-phone"></i> +84 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@dulichnhatrang.com</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Theo Dõi</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Du Lịch Nha Trang. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản - Du Lịch Nha Trang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Du Lịch Nha Trang">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="destinations.html">Điểm Đến</a></li>
+                    <li><a href="services.html">Dịch Vụ</a></li>
+                    <li><a href="cuisine.html">Ẩm Thực</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                    <li class="active"><a href="account.html"><i class="fas fa-user-circle"></i></a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Account Section -->
+    <section class="account-section">
+        <div class="container">
+            <div class="account-container">
+                <div class="account-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <img src="images/avatar-placeholder.jpg" alt="User Avatar" id="user-avatar">
+                            <div class="avatar-upload">
+                                <label for="avatar-input">
+                                    <i class="fas fa-camera"></i>
+                                </label>
+                                <input type="file" id="avatar-input" accept="image/*">
+                            </div>
+                        </div>
+                        <h3 id="user-name">Tên người dùng</h3>
+                        <p id="user-email">email@example.com</p>
+                    </div>
+                    <ul class="account-menu">
+                        <li class="active" data-tab="profile"><i class="fas fa-user"></i> Thông tin cá nhân</li>
+                        <li data-tab="bookings"><i class="fas fa-calendar-check"></i> Lịch sử đặt chỗ</li>
+                        <li data-tab="reviews"><i class="fas fa-star"></i> Đánh giá của tôi</li>
+                        <li data-tab="favorites"><i class="fas fa-heart"></i> Yêu thích</li>
+                        <li data-tab="settings"><i class="fas fa-cog"></i> Cài đặt tài khoản</li>
+                        <li id="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</li>
+                    </ul>
+                </div>
+                <div class="account-content">
+                    <!-- Profile Tab -->
+                    <div class="account-tab active" id="profile-tab">
+                        <h2>Thông tin cá nhân</h2>
+                        <form id="profile-form">
+                            <div class="form-group">
+                                <label for="full-name">Họ và tên</label>
+                                <input type="text" id="full-name" name="full-name" placeholder="Nhập họ và tên">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Số điện thoại</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">Ngày sinh</label>
+                                    <input type="date" id="dob" name="dob">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Địa chỉ</label>
+                                <input type="text" id="address" name="address" placeholder="Nhập địa chỉ">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Thành phố</label>
+                                    <input type="text" id="city" name="city" placeholder="Nhập thành phố">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Quốc gia</label>
+                                    <input type="text" id="country" name="country" placeholder="Nhập quốc gia">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Giới tính</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="gender" value="male"> Nam
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender" value="female"> Nữ
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender" value="other"> Khác
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bio">Giới thiệu bản thân</label>
+                                <textarea id="bio" name="bio" rows="4" placeholder="Giới thiệu ngắn về bản thân"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Lưu thông tin</button>
+                        </form>
+                    </div>
+
+                    <!-- Bookings Tab -->
+                    <div class="account-tab" id="bookings-tab">
+                        <h2>Lịch sử đặt chỗ</h2>
+                        <div class="booking-filters">
+                            <button class="filter-btn active" data-filter="all">Tất cả</button>
+                            <button class="filter-btn" data-filter="tour">Tour</button>
+                            <button class="filter-btn" data-filter="vehicle">Phương tiện</button>
+                            <button class="filter-btn" data-filter="restaurant">Nhà hàng</button>
+                        </div>
+                        <div class="bookings-list" id="bookings-list">
+                            <!-- Bookings will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="account-tab" id="reviews-tab">
+                        <h2>Đánh giá của tôi</h2>
+                        <div class="reviews-list" id="reviews-list">
+                            <!-- Reviews will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Favorites Tab -->
+                    <div class="account-tab" id="favorites-tab">
+                        <h2>Danh sách yêu thích</h2>
+                        <div class="favorites-categories">
+                            <button class="category-btn active" data-category="destinations">Điểm đến</button>
+                            <button class="category-btn" data-category="tours">Tour</button>
+                            <button class="category-btn" data-category="restaurants">Nhà hàng</button>
+                        </div>
+                        <div class="favorites-list" id="favorites-list">
+                            <!-- Favorites will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div class="account-tab" id="settings-tab">
+                        <h2>Cài đặt tài khoản</h2>
+                        <div class="settings-section">
+                            <h3>Thay đổi mật khẩu</h3>
+                            <form id="password-form">
+                                <div class="form-group">
+                                    <label for="current-password">Mật khẩu hiện tại</label>
+                                    <input type="password" id="current-password" name="current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">Mật khẩu mới</label>
+                                    <input type="password" id="new-password" name="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Xác nhận mật khẩu mới</label>
+                                    <input type="password" id="confirm-password" name="confirm-password">
+                                </div>
+                                <button type="submit" class="btn">Cập nhật mật khẩu</button>
+                            </form>
+                        </div>
+                        <div class="settings-section">
+                            <h3>Thông báo</h3>
+                            <div class="notification-settings">
+                                <div class="notification-option">
+                                    <label>
+                                        <input type="checkbox" id="email-notifications" checked>
+                                        Nhận thông báo qua email
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <label>
+                                        <input type="checkbox" id="promo-notifications" checked>
+                                        Nhận thông tin khuyến mãi và ưu đãi
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <label>
+                                        <input type="checkbox" id="booking-notifications" checked>
+                                        Thông báo về đặt chỗ và lịch trình
+                                    </label>
+                                </div>
+                            </div>
+                            <button id="save-notifications" class="btn">Lưu cài đặt</button>
+                        </div>
+                        <div class="settings-section">
+                            <h3>Xóa tài khoản</h3>
+                            <p class="warning-text">Cảnh báo: Hành động này không thể hoàn tác. Tất cả dữ liệu của bạn sẽ bị xóa vĩnh viễn.</p>
+                            <button id="delete-account" class="btn btn-danger">Xóa tài khoản</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="login">Đăng nhập</div>
+                <div class="modal-tab" data-tab="register">Đăng ký</div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form active" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mật khẩu</label>
+                        <input type="password" id="login-password" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form-group remember-me">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Ghi nhớ đăng nhập
+                        </label>
+                        <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                    </div>
+                    <button type="button" id="login-btn" class="btn">Đăng nhập</button>
+                    <div class="social-login">
+                        <p>Hoặc đăng nhập với</p>
+                        <div class="social-buttons">
+                            <button class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                            <button class="social-btn google"><i class="fab fa-google"></i> Google</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-form" id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Họ và tên</label>
+                        <input type="text" id="register-name" placeholder="Nhập họ và tên của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Mật khẩu</label>
+                        <input type="password" id="register-password" placeholder="Tạo mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Xác nhận mật khẩu</label>
+                        <input type="password" id="register-confirm-password" placeholder="Nhập lại mật khẩu">
+                    </div>
+                    <div class="form-group terms">
+                        <label>
+                            <input type="checkbox" id="agree-terms"> Tôi đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách bảo mật</a>
+                        </label>
+                    </div>
+                    <button type="button" id="register-btn" class="btn">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Về chúng tôi</h3>
+                    <p>Du Lịch Nha Trang cung cấp thông tin du lịch đầy đủ và chính xác nhất về thành phố biển Nha Trang xinh đẹp.</p>
+                    <div class="contact">
+                        <span><i class="fas fa-phone"></i> 0123 456 789</span>
+                        <span><i class="fas fa-envelope"></i> info@dulichnhatrang.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="destinations.html">Điểm đến</a></li>
+                        <li><a href="services.html">Dịch vụ</a></li>
+                        <li><a href="cuisine.html">Ẩm thực</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Đăng ký nhận tin</h3>
+                    <p>Nhận thông tin mới nhất về các điểm đến và ưu đãi du lịch Nha Trang.</p>
+                    <form action="#" method="post">
+                        <input type="email" name="email" placeholder="Nhập email của bạn">
+                        <button type="submit" class="btn">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Du Lịch Nha Trang. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/account.js"></script>
+</body>
+</html>

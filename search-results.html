@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Quả Tìm Kiếm - Du Lịch Nha Trang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search-results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Du Lịch Nha Trang</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="destinations.html">Điểm Đến</a></li>
+                    <li><a href="cuisine.html">Ẩm Thực</a></li>
+                    <li><a href="services.html">Dịch Vụ</a></li>
+                    <li><a href="booking.html">Đặt Chỗ</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Kết Quả Tìm Kiếm</h1>
+            <p>Kết quả tìm kiếm cho: <span id="search-query"></span></p>
+        </div>
+    </section>
+
+    <section class="search-results">
+        <div class="container">
+            <div class="results-info">
+                <p>Tìm thấy <span id="results-count">0</span> kết quả</p>
+            </div>
+            
+            <div class="results-container" id="results-container">
+                <!-- Search results will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>Không tìm thấy kết quả nào phù hợp với từ khóa của bạn.</p>
+                <p>Vui lòng thử lại với từ khóa khác hoặc xem các gợi ý dưới đây:</p>
+                <div class="suggestions">
+                    <a href="destinations.html">Khám phá điểm đến</a>
+                    <a href="cuisine.html">Ẩm thực Nha Trang</a>
+                    <a href="services.html">Dịch vụ du lịch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Về Chúng Tôi</h3>
+                    <p>Chúng tôi cung cấp thông tin du lịch chính xác và hấp dẫn về Nha Trang, giúp bạn có những trải nghiệm tuyệt vời nhất tại thiên đường biển này.</p>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Liên Hệ</h3>
+                    <p><i class="fas fa-phone"></i> +84 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@dulichnhatrang.com</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Theo Dõi</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Du Lịch Nha Trang. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get search query from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('q');
+            
+            if (searchQuery) {
+                // Display search query
+                document.getElementById('search-query').textContent = searchQuery;
+                document.getElementById('search-input').value = searchQuery;
+                
+                // Perform search
+                performSearch(searchQuery);
+            } else {
+                // No search query provided
+                document.getElementById('search-query').textContent = 'Không có từ khóa';
+                document.getElementById('no-results').style.display = 'block';
+            }
+        });
+        
+        function performSearch(query) {
+            // In a real application, you would search through your database
+            // For this demo, we'll use some sample data
+            const searchData = [
+                {
+                    type: 'destination',
+                    title: 'Vinpearl Land',
+                    description: 'Khu vui chơi giải trí hiện đại trên đảo Hòn Tre, kết nối với đất liền bằng cáp treo dài nhất thế giới trên biển.',
+                    image: 'images/vinpearl.jpeg',
+                    link: 'destinations.html'
+                },
+                {
+                    type: 'destination',
+                    title: 'Bãi biển Nha Trang',
+                    description: 'Bãi biển cát trắng mịn trải dài 7km dọc theo thành phố, với làn nước trong xanh và nhiều hoạt động thú vị.',
+                    image: 'images/Bien-nha-trang-2-jpg.webp',
+                    link: 'destinations.html'
+                },
+                {
+                    type: 'cuisine',
+                    title: 'Bánh Căn',
+                    description: 'Món bánh truyền thống của Nha Trang, được làm từ bột gạo, nướng trong khuôn đặc biệt và ăn kèm nước mắm chua ngọt.',
+                    image: 'images/banh-can.jpeg',
+                    link: 'cuisine.html'
+                },
+                {
+                    type: 'cuisine',
+                    title: 'Hải Sản Tươi Sống',
+                    description: 'Nha Trang nổi tiếng với hải sản tươi ngon, được chế biến đa dạng từ hấp, nướng đến xào.',
+                    image: 'images/Hai-San-Nha-Trang.jpeg',
+                    link: 'cuisine.html'
+                },
+                {
+                    type: 'service',
+                    title: 'Tour 4 Đảo',
+                    description: 'Khám phá 4 hòn đảo xinh đẹp của vịnh Nha Trang: Hòn Mun, Hòn Một, Hòn Tằm và Hòn Mieu.',
+                    image: 'images/tour.jpeg',
+                    link: 'services.html'
+                }
+            ];
+            
+            // Filter results based on search query
+            const results = searchData.filter(item => {
+                return item.title.toLowerCase().includes(query.toLowerCase()) || 
+                       item.description.toLowerCase().includes(query.toLowerCase()) ||
+                       item.type.toLowerCase().includes(query.toLowerCase());
+            });
+            
+            // Display results
+            const resultsContainer = document.getElementById('results-container');
+            const resultsCount = document.getElementById('results-count');
+            
+            if (results.length > 0) {
+                resultsCount.textContent = results.length;
+                
+                results.forEach(result => {
+                    const resultElement = document.createElement('div');
+                    resultElement.className = 'result-item';
+                    
+                    resultElement.innerHTML = `
+                        <div class="result-image">
+                            <img src="${result.image}" alt="${result.title}">
+                        </div>
+                        <div class="result-info">
+                                            <div class="result-type">${getTypeLabel(result.type)}</div>
+                            <h3>${result.title}</h3>
+                            <p>${result.description}</p>
+                            <a href="${result.link}" class="btn">Xem chi tiết</a>
+                        </div>
+                    `;
+                    
+                    resultsContainer.appendChild(resultElement);
+                });
+            } else {
+                // No results found
+                document.getElementById('no-results').style.display = 'block';
+            }
+        }
+        
+        function getTypeLabel(type) {
+            switch(type) {
+                case 'destination':
+                    return '<i class="fas fa-map-marker-alt"></i> Điểm đến';
+                case 'cuisine':
+                    return '<i class="fas fa-utensils"></i> Ẩm thực';
+                case 'service':
+                    return '<i class="fas fa-concierge-bell"></i> Dịch vụ';
+                default:
+                    return type;
+            }
+        }
+    </script>
+</body>
+</html>
