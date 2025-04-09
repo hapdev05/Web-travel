@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gallery images
     const galleryImages = [
-        { src: "../images/Bien-nha-trang-2-jpg.webp", alt: "Bãi biển Nha Trang" },
-        { src: "../images/vinpearl.jpeg", alt: "Vinpearl Land" },
-        { src: "../images/thapba.jpeg", alt: "Tháp Bà Ponagar" },
-        { src: "../images/honmun.jpeg", alt: "Đảo Hòn Mun" },
-        { src: "../images/Dao-Diep-Son.jpeg", alt: "Đường đi bộ Điệp Sơn" },
+        { src: "images/Bien-nha-trang-2-jpg.webp", alt: "Bãi biển Nha Trang" },
+        { src: "images/vinpearl.jpeg", alt: "Vinpearl Land" },
+        { src: "images/thapba.jpeg", alt: "Tháp Bà Ponagar" },
+        { src: "images/honmun.jpeg", alt: "Đảo Hòn Mun" },
+        { src: "images/Dao-Diep-Son.jpeg", alt: "Đường đi bộ Điệp Sơn" },
         { src: "images/hoanghon.jpeg", alt: "Hoàng hôn Nha Trang" },
         { src: "images/honchong.jpeg", alt: "Hòn Chồng" },
         { src: "images/captreo.jpeg", alt: "Cáp treo Vinpearl" }
