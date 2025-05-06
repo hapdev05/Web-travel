@@ -203,7 +203,7 @@ nav ul li a.active {
 
 /* Page Banner */
 .page-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/nhatrang_banner.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/vinh-nha-trang-dep-nhat.jpg');
     background-size: cover;
     background-position: center;
     height: 300px;
